@@ -1,41 +1,200 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="pt">
 <head>
-<meta charset="UTF-8">
-<title>Portfolio Fotografia</title>
-<link rel="stylesheet" href="style.css">
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rui Silva — Fotógrafo</title>
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+
+  <!-- CSS separado por secção -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/sobre.css" />
+  <link rel="stylesheet" href="css/portfolio.css" />
+  <link rel="stylesheet" href="css/contactos.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+</head>
 <body>
 
-<header>
-<h1>Rui Silva</h1>
+  <!-- CURSOR PERSONALIZADO -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
 
-<nav>
-<a href="#">Home</a>
-<a href="#">Portfolio</a>
-<a href="sobre.html">Sobre</a>
-<a href="#">Contacto</a>
+  <!-- Nav -->
+<nav class="navbar">
+
+  <a href="#" class="logo">Rui Silva</a>
+
+  <div class="nav-buttons">
+    <a href="#portfolio" class="nav-btn">Portfolio</a>
+    <a href="#sobre" class="nav-btn">Sobre mim</a>
+    <a href="#contactos" class="nav-btn">Contactos</a>
+  </div>
+
 </nav>
-</header>
 
+  <!-- HERO (secção principal / capa) -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Fotógrafo · Portugal</p>
+      <h1 class="hero-title">
+        A arte de<br>
+        <em>capturar</em><br>
+        o instante
+      </h1>
+      <p class="hero-sub">
+        Fotografia de autor com uma visão própria do mundo.
+        Retratos, paisagens e momentos que ficam para sempre.
+      </p>
+      <div class="hero-cta">
+        <a href="#portfolio" class="btn">
+          Ver trabalhos
+          <svg viewBox="0 0 24 8" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+            <line x1="0" y1="4" x2="20" y2="4"/>
+            <polyline points="16,1 20,4 16,7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <!-- Substitui o bloco abaixo por: <img src="images/hero.jpg" alt="Fotografia de destaque" /> -->
+      <div class="hero-right">
+  <img src="images/foto2.JPG" alt="Fotografia">
+      <span class="hero-label">Fotografia de autor</span>
+    </div>
+  </section>
 
-<section class="hero">
+  <!-- SOBRE MIM -->
+  <section id="sobre" class="section-sobre">
+    <div class="about-grid">
+      <div class="section-label reveal">Sobre mim</div>
+      <div class="about-content reveal">
+        <h2>Uma visão <em>pessoal</em><br>do mundo</h2>
+        <p>
+          Sou fotógrafo com mais de uma década de experiência a documentar a vida
+          nas suas formas mais genuínas. O meu trabalho move-se entre o retrato íntimo
+          e a paisagem contemplativa, sempre à procura da luz que transforma o ordinário
+          em extraordinário.
+        </p>
+        <p>
+          Baseado em Portugal, colaboro com marcas, revistas e pessoas que partilham
+          o mesmo apreço pela imagem cuidada e pela narrativa visual honesta.
+        </p>
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-num">10+</span>
+            <span class="stat-label">Anos de experiência</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">240</span>
+            <span class="stat-label">Projetos realizados</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">18</span>
+            <span class="stat-label">Países visitados</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="hero-text">
-<h2>Portfólio<br>2025</h2>
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="section-works">
+    <div class="works-header reveal">
+      <h2>Trabalhos<br><em>selecionados</em></h2>
+      <a href="#" class="btn btn-light">
+        Portfólio completo
+        <svg viewBox="0 0 24 8" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+          <line x1="0" y1="4" x2="20" y2="4"/>
+          <polyline points="16,1 20,4 16,7"/>
+        </svg>
+      </a>
+    </div>
+    <div class="works-grid">
+      <!-- Cada bloco abaixo é uma fotografia. Substitui .img-ph por <img src="images/fotoX.jpg" alt="..." /> -->
 
-<button>Veja meu trabalho</button>
-</div>
+      <div class="work-item reveal" style="--delay: 0ms">
+        <div class="img-ph ph1"></div>
+        <div class="work-overlay">
+          <div class="work-meta">
+            <span>Retrato · 2024</span>
+            <strong>Luz de Inverno</strong>
+          </div>
+        </div>
+      </div>
 
-<div class="hero-images">
-<img src="images/foto1.JPG">
-<img src="images/foto2.JPG">
-</div>
+      <div class="work-item reveal" style="--delay: 80ms">
+        <div class="img-ph ph2"></div>
+        <div class="work-overlay">
+          <div class="work-meta">
+            <span>Paisagem · 2024</span>
+            <strong>Costa Atlântica</strong>
+          </div>
+        </div>
+      </div>
 
-</section>
+      <div class="work-item reveal" style="--delay: 160ms">
+        <div class="img-ph ph3"></div>
+        <div class="work-overlay">
+          <div class="work-meta">
+            <span>Editorial · 2023</span>
+            <strong>Silêncio Urbano</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-item reveal" style="--delay: 240ms">
+        <div class="img-ph ph4"></div>
+        <div class="work-overlay">
+          <div class="work-meta">
+            <span>Documental · 2023</span>
+            <strong>Quotidiano</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-item reveal" style="--delay: 320ms">
+        <div class="img-ph ph5"></div>
+        <div class="work-overlay">
+          <div class="work-meta">
+            <span>Retrato · 2023</span>
+            <strong>Alma</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTOS -->
+  <section id="contactos" class="section-contact">
+    <p class="section-label reveal">Contacto</p>
+    <h2 class="reveal">Vamos <em>trabalhar</em><br>juntos</h2>
+    <p class="reveal">
+      Disponível para projetos editoriais, comerciais e pessoais.<br>
+      Não hesite em entrar em contacto.
+    </p>
+    <a href="mailto:ola@seunome.pt" class="contact-email reveal">ola@seunome.pt</a>
+  </section>
+
+  <!-- FOOTER (rodapé) -->
+ <footer>
+  <span>© 2026 Rui Silva</span>
+  <nav class="socials">
+    <a href="#">Instagram</a>
+    <a href="#">Behance</a>
+    <a href="#">LinkedIn</a>
+  </nav>
+  <span>Portugal</span>
+ </footer>
+
+  <!-- JAVASCRIPT -->
+  <script src="js/cursor.js"></script>
+  <script src="js/scroll-reveal.js"></script>
 
 </body>
-
 </html>
