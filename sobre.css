@@ -1,0 +1,79 @@
+/* ================================================
+   SOBRE.CSS — Secção "Sobre mim"
+   Texto biográfico e estatísticas
+   ================================================ */
+
+.section-sobre {
+  padding: 9rem 5rem;
+}
+
+/* Layout em duas colunas: label à esquerda, conteúdo à direita */
+.about-grid {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Título da secção (h2) */
+.about-content h2 {
+  font-family: var(--fonte-serif);
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  font-weight: 300;
+  line-height: 1.25;
+  margin-bottom: 2rem;
+}
+
+.about-content h2 em {
+  font-style: italic;
+  color: var(--destaque);
+}
+
+/* Parágrafos de texto */
+.about-content p {
+  font-size: 0.9rem;
+  line-height: 1.95;
+  color: var(--cinza);
+  margin-bottom: 1.4rem;
+  max-width: 500px;
+}
+
+/* --- Estatísticas (10+ anos, 240 projetos, etc.) --- */
+.stats {
+  display: flex;
+  gap: 3rem;
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--linha);
+}
+
+/* O número grande (ex: "10+") */
+.stat-num {
+  font-family: var(--fonte-serif);
+  font-size: 2.4rem;
+  font-weight: 300;
+  color: var(--preto-suave);
+  display: block;
+  line-height: 1;
+}
+
+/* O texto por baixo do número (ex: "Anos de experiência") */
+.stat-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cinza);
+  margin-top: 0.5rem;
+  display: block;
+}
+
+/* --- Responsivo --- */
+@media (max-width: 900px) {
+  .section-sobre { padding: 5rem 2rem; }
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .section-label { position: static; }
+}

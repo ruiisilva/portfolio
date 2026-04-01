@@ -1,0 +1,104 @@
+/* ================================================
+   HERO.CSS — Secção principal (capa do site)
+   A primeira coisa que o visitante vê
+   ================================================ */
+
+.hero {
+  min-height: 100vh;              /* ocupa a altura toda do ecrã */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* divide em duas colunas iguais */
+  position: relative;
+  overflow: hidden;
+}
+
+/* --- Coluna esquerda: texto --- */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;      /* empurra o conteúdo para baixo */
+  padding: 9rem 5rem 6rem;
+}
+
+/* Pequeno texto acima do título (ex: "Fotógrafo · Portugal") */
+.hero-eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--cinza);
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.3s forwards; /* aparece com atraso */
+}
+
+/* Título principal grande */
+.hero-title {
+  font-family: var(--fonte-serif);
+  font-size: clamp(3.2rem, 5.5vw, 5.5rem); /* tamanho responsivo */
+  font-weight: 300;
+  line-height: 1.08;
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.5s forwards;
+}
+
+/* A palavra em itálico dourado dentro do título */
+.hero-title em {
+  font-style: italic;
+  color: var(--destaque);
+}
+
+/* Parágrafo descritivo abaixo do título */
+.hero-sub {
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  color: var(--cinza);
+  line-height: 1.85;
+  max-width: 290px;
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.7s forwards;
+}
+
+/* Botão "Ver trabalhos" */
+.hero-cta {
+  margin-top: 3rem;
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.9s forwards;
+}
+
+
+/* A tua foto principal vai aqui */
+.hero-right img {
+  width: 80%;
+  height: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+
+.camera-icon {
+  width: 64px;
+  height: 64px;
+  color: rgba(160, 120, 80, 0.4);
+}
+
+/* Texto vertical na imagem */
+.hero-label {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 2rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+/* --- Responsivo --- */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .hero-left  { padding: 8rem 2rem 3rem; }
+  .hero-right { height: 55vw; min-height: 260px; }
+}

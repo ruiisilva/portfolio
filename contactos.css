@@ -1,0 +1,66 @@
+/* ================================================
+   CONTACTOS.CSS — Secção de contacto
+   Convite a trabalhar juntos + email
+   ================================================ */
+
+.section-contact {
+  max-width: 720px;
+  margin: 0 auto;       /* centra horizontalmente */
+  text-align: center;
+  padding: 10rem 2rem;
+}
+
+.section-contact .section-label {
+  position: static;     /* nesta secção o label não é sticky */
+  display: inline-block;
+  margin-bottom: 2.5rem;
+}
+
+.section-contact .section-label::before {
+  margin: 0 auto 0.9rem;
+}
+
+/* Título grande */
+.section-contact h2 {
+  font-family: var(--fonte-serif);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.section-contact h2 em {
+  font-style: italic;
+  color: var(--destaque);
+}
+
+/* Texto descritivo */
+.section-contact p {
+  font-size: 0.875rem;
+  color: var(--cinza);
+  line-height: 1.9;
+  margin-bottom: 3rem;
+}
+
+/* O email clicável — substitui pelo teu email real */
+.contact-email {
+  font-family: var(--fonte-serif);
+  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--preto-suave);
+  text-decoration: none;
+  border-bottom: 1px solid var(--linha);
+  padding-bottom: 0.25rem;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.contact-email:hover {
+  color: var(--destaque);
+  border-color: var(--destaque);
+}
+
+/* --- Responsivo --- */
+@media (max-width: 900px) {
+  .section-contact { padding: 6rem 2rem; }
+}

@@ -1,0 +1,161 @@
+/* ================================================
+   BASE.CSS — Estilos globais e variáveis de cor
+   Aplica-se a toda a página
+   ================================================ */
+
+/* --- Variáveis de cor e tipografia --- */
+:root {
+  --branco:       #ffffff;       /* fundo geral */
+  --preto-suave:  #1c1c1c;       /* cor principal do texto */
+  --cinza:        #6e6e6e;       /* textos secundários (menos importantes) */
+  --linha:        #e8e8e8;       /* linhas divisórias subtis */
+  --destaque:     #a07850;       /* cor de destaque (teca/dourado) — usada no itálico */
+  --fonte-serif:  'Cormorant Garamond', Georgia, serif;  /* fonte elegante para títulos */
+  --fonte-sans:   'DM Sans', sans-serif;                 /* fonte limpa para texto corrido */
+}
+
+/* --- Reset: remove margens e paddings padrão do browser --- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- Configuração base do HTML e Body --- */
+html {
+  scroll-behavior: smooth; /* scroll suave ao clicar nos links do menu */
+  font-size: 16px;
+}
+
+body {
+  background: var(--branco);
+  color: var(--preto-suave);
+  font-family: var(--fonte-sans);
+  font-weight: 300;
+  cursor: none;          /* esconde o cursor padrão (usamos um personalizado) */
+  overflow-x: hidden;    /* evita scroll horizontal indesejado */
+  -webkit-font-smoothing: antialiased; /* texto mais nítido em Mac */
+}
+
+/* --- Botão reutilizável (usado no hero e no portfolio) --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--preto-suave);
+  text-decoration: none;
+  border-bottom: 1px solid var(--linha);
+  padding-bottom: 0.4rem;
+  transition: border-color 0.3s, gap 0.3s;
+}
+
+.btn svg {
+  width: 20px;
+  flex-shrink: 0;
+}
+
+.btn:hover {
+  border-color: var(--preto-suave);
+  gap: 1.4rem; /* a seta afasta-se ligeiramente no hover */
+}
+
+/* Versão clara do botão (usada na secção escura do portfolio) */
+.btn-light {
+  color: rgba(255, 255, 255, 0.7);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-light:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* --- Label de secção (ex: "Sobre mim", "Contacto") --- */
+.section-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--cinza);
+  position: sticky;
+  top: 8rem;
+  padding-top: 0.25rem;
+}
+
+.section-label::before {
+  content: '';
+  display: block;
+  width: 18px;
+  height: 1px;
+  background: var(--linha);
+  margin-bottom: 0.9rem;
+}
+
+/* --- Animação de scroll reveal (elementos que aparecem ao fazer scroll) --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Keyframes de animação --- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scrollDown {
+  0%   { top: -100%; }
+  50%  { top: 0; }
+  100% { top: 100%; }
+}
+
+/* ================================================
+   CURSOR PERSONALIZADO (estilos visuais)
+   A lógica está em js/cursor.js
+   ================================================ */
+
+.cursor {
+  position: fixed;
+  width: 7px;
+  height: 7px;
+  background: var(--preto-suave);
+  border-radius: 50%;
+  pointer-events: none;   /* não interfere com cliques */
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-ring {
+  position: fixed;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--preto-suave);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease,
+              opacity 0.3s ease, border-color 0.3s ease;
+  opacity: 0.35;
+}
+
+/* Anel maior ao fazer hover em links e fotos */
+.cursor-ring.hover {
+  width: 52px;
+  height: 52px;
+  opacity: 0.2;
+  border-color: var(--destaque);
+}

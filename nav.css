@@ -1,0 +1,82 @@
+/* ================================================
+NAV.CSS — Header com botões de navegação
+================================================ */
+
+.navbar{
+position: fixed;
+top:0;
+left:0;
+right:0;
+z-index:100;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:2rem 5rem;
+
+background:rgba(255,255,255,0.9);
+backdrop-filter: blur(12px);
+}
+
+/* Logo */
+
+.logo{
+font-family: var(--fonte-serif);
+font-size:1.1rem;
+font-style:italic;
+text-decoration:none;
+color:var(--preto-suave);
+}
+
+/* Container dos botões */
+
+.nav-buttons{
+display:flex;
+gap:1rem;
+}
+
+/* Botões */
+
+.nav-btn{
+font-family:var(--fonte-sans);
+font-size:0.75rem;
+letter-spacing:0.15em;
+text-transform:uppercase;
+
+padding:10px 18px;
+
+border:1px solid var(--preto-suave);
+border-radius:30px;
+
+color:var(--preto-suave);
+text-decoration:none;
+
+transition:all 0.3s ease;
+}
+
+/* Hover */
+
+.nav-btn:hover{
+background:var(--preto-suave);
+color:white;
+}
+
+/* Responsivo */
+
+@media (max-width:900px){
+
+.navbar{
+padding:1.5rem 2rem;
+}
+
+.nav-buttons{
+gap:0.5rem;
+}
+
+.nav-btn{
+padding:8px 14px;
+font-size:0.7rem;
+}
+
+}

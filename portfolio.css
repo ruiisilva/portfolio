@@ -1,0 +1,126 @@
+/* ================================================
+   PORTFOLIO.CSS — Secção de fotografias
+   Grelha assimétrica com as tuas fotos
+   ================================================ */
+
+.section-works {
+  background: var(--preto-suave); /* fundo escuro para contrastar com as fotos */
+  padding: 8rem 5rem;
+}
+
+/* --- Cabeçalho da secção (título + link) --- */
+.works-header {
+  max-width: 1100px;
+  margin: 0 auto 4.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.works-header h2 {
+  font-family: var(--fonte-serif);
+  font-size: clamp(2.4rem, 4vw, 3.8rem);
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.works-header h2 em {
+  font-style: italic;
+  color: var(--destaque);
+}
+
+/* --- Grelha de fotografias --- */
+.works-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12 colunas invisíveis para posicionar as fotos */
+  gap: 1.2rem;
+}
+
+/* Tamanho e posição de cada fotografia na grelha */
+.work-item:nth-child(1) { grid-column: span 7; height: 500px; } /* foto grande à esquerda */
+.work-item:nth-child(2) { grid-column: span 5; height: 240px; } /* foto pequena à direita */
+.work-item:nth-child(3) { grid-column: span 5; height: 240px; } /* foto pequena à direita */
+.work-item:nth-child(4) { grid-column: span 4; height: 290px; } /* foto média */
+.work-item:nth-child(5) { grid-column: span 8; height: 290px; } /* foto larga */
+
+.work-item {
+  position: relative;
+  overflow: hidden;
+}
+
+/* A imagem em si (ou o placeholder) */
+.img-ph {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Zoom suave ao passar o rato por cima */
+.work-item:hover .img-ph {
+  transform: scale(1.05);
+}
+
+/* --- Cores dos placeholders (remove quando tiveres fotos reais) ---
+   Para usar fotos reais, substitui <div class="img-ph ph1"></div>
+   por <img src="images/foto1.jpg" alt="descrição" />             */
+.ph1 { background: linear-gradient(145deg, #c8c0b8 0%, #a89888 100%); }
+.ph2 { background: linear-gradient(165deg, #d4ccc4 0%, #b0a090 100%); }
+.ph3 { background: linear-gradient(130deg, #bab0a8 0%, #988878 100%); }
+.ph4 { background: linear-gradient(150deg, #c0b8b0 0%, #a09080 100%); }
+.ph5 { background: linear-gradient(140deg, #d0c8c0 0%, #b09888 100%); }
+
+/* --- Overlay escuro que aparece ao fazer hover --- */
+.work-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(28, 28, 28, 0);
+  transition: background 0.4s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.4rem;
+}
+
+.work-item:hover .work-overlay {
+  background: rgba(28, 28, 28, 0.52);
+}
+
+/* Texto que aparece sobre a foto no hover */
+.work-meta {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.work-item:hover .work-meta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.work-meta span {
+  display: block;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 0.3rem;
+}
+
+.work-meta strong {
+  font-family: var(--fonte-serif);
+  font-size: 1.1rem;
+  font-weight: 300;
+  font-style: italic;
+  color: #ffffff;
+}
+
+/* --- Responsivo --- */
+@media (max-width: 900px) {
+  .section-works { padding: 5rem 2rem; }
+  .works-header { flex-direction: column; align-items: flex-start; gap: 2rem; }
+  .works-grid { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .work-item:nth-child(n) { grid-column: span 1; height: 200px; }
+  .work-item:nth-child(1) { grid-column: span 2; height: 260px; }
+}
